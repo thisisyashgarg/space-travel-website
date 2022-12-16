@@ -155,6 +155,8 @@ select {
     line-height: 1.1;
 }
 
+/* components and custom css */
+
 .numbered-title{
     font-family: var(--ff-sans-cond);
     font-size: var(--fs-500);
@@ -169,5 +171,109 @@ select {
 
 }
 
+/* Components */
+.large-button{
+    position: relative;
+    display: grid;
+    z-index: 1;
+    align-items: center;
+    padding: 0 2em;
+    aspect-ratio: 1;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.large-button::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: hsl( var(--clr-white) / .15);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 500ms linear, transform 500ms ease;
+}
+
+.large-button:hover::after, .large-button:focus::after {
+    opacity: 1;
+    transform: scale(1.4);
+}
+
+.primary-navigation{
+    /* css variables */
+    --gap: 10rem;
+    --underline-spacing : 2em; 
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-navigation a{
+    text-decoration: none;
+}
+
+.primary-navigation a > span{
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+/* Choosing all the direct descendants */
+.underline-indicators > * {
+    cursor: pointer;
+    padding: var(--underline-spacing, 1em) 0;
+    border: 0;
+    border-bottom: 0.2rem solid hsl( var(--clr-white) / 0 );
+}
+
+.underline-indicators > * :hover, .underline-indicators > * :focus {
+    border-color: hsl( var(--clr-white) / 0.5 );
+}
+
+.underline-indicators > .active, .underline-indicators > [aria-selected="true"]{
+    color:  hsl( var(--clr-white) / 1);
+    border-color: hsl( var(--clr-white) / 1);
+}
+
+.tab-list{
+    --gap: 3rem;
+}
+
+.dot-indicators > *{
+    border: 0;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: 0.5em;
+    background-color: hsl( var(--clr-white) / 0.25);
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+    background-color: hsl( var(--clr-white) / .5);
+}
+
+.dot-indicators > [aria-selected="true"] {
+    background-color: hsl( var(--clr-white) / 1); 
+}
+
+.number-indicators > * {
+    text-decoration: none;
+    border: 0.5px solid hsl( var(--clr-light) );
+    border-radius: 50%;
+    aspect-ratio: 1;
+    margin: 1em;
+    padding: 0.4em 1em;
+    background-color: hsl( var(--clr-dark) / 1);
+}
+
+.number-indicators > *:hover,
+.number-indicators > *:focus {
+    background-color: hsl( var(--clr-white) / .5);
+}
+
+.number-indicators > [aria-selected="true"] {
+    background-color: hsl( var(--clr-white) / 1); 
+}
 
 

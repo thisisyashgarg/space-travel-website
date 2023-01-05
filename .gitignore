@@ -3,6 +3,8 @@ preview.jpg
 .vscode
 # starter code
 
+node_modules
+
 starter-code/crew-engineer.html
 starter-code/crew-pilot.html
 starter-code/crew-specialist.html
@@ -13,3 +15,7 @@ starter-code/destination-titan.html
 starter-code/technology-capsule.html
 starter-code/technology-spaceport.html
 starter-code/technology-vehicle.html
+challenge1.html
+design-system.html
+design-systems-complete.html
+index.css
